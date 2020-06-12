@@ -1,4 +1,5 @@
 -- Transfer $100 from Mark to Mary Account
+
 BEGIN TRY
     BEGIN TRANSACTION
          UPDATE Accounts SET Balance = Balance - 100 WHERE Id = 1

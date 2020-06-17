@@ -56,19 +56,19 @@ UPDATE table_a SET name = name + ' transaksi A'
 WHERE id IN (1, 2, 3, 4, 5)
 
 -- langkah 3
-UPDATE table_b SET name = 'transaksi A' 
+UPDATE table_b SET name = name + 'transaksi A' 
 WHERE id = 1
 
 COMMIT TRANSACTION
 
 -- Transaksi B
 
--- SET DEADLOCK_PRIORITY HIGH
--- GO
+SET DEADLOCK_PRIORITY HIGH
+GO
 
 BEGIN TRANSACTION
 -- langkah 2
-UPDATE table_b SET name = 'transaksi B' 
+UPDATE table_b SET name = name + ' transaksi B' 
 WHERE id = 1
 
 -- langkah 4
